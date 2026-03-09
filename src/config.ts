@@ -21,7 +21,6 @@ import { LinkPreset } from "./types/config";
 // 定义站点语言
 const SITE_LANG = "zh_CN"; // 语言代码，例如：'en', 'zh_CN', 'ja' 等。
 const SITE_TIMEZONE = 8; //设置你的网站时区 from -12 to 12 default in UTC+8
-
 export const siteConfig: SiteConfig = {
 	title: "Anime英梨梨的博客",
 	subtitle: "",
@@ -198,7 +197,6 @@ export const siteConfig: SiteConfig = {
 	},
 	showCoverInContent: false, // 在文章内容页显示文章封面
 	generateOgImages: false, // 启用生成OpenGraph图片功能,注意开启后要渲染很长时间，不建议本地调试的时候开启
-	
 	favicon: [
 		// 留空以使用默认 favicon
 		// {
@@ -228,7 +226,6 @@ export const siteConfig: SiteConfig = {
 			enableCompress: true, // 启用字体子集优化，减少字体文件大小
 		},
 	},
-	
 	showLastModified: true, // 控制“上次编辑”卡片显示的开关
 };
 export const fullscreenWallpaperConfig: FullscreenWallpaperConfig = {
@@ -266,7 +263,7 @@ export const navBarConfig: NavBarConfig = {
 		LinkPreset.Archive,
 		// 支持自定义导航栏链接，支持多级菜单
 		{
-			name: "友情链接",
+			name: "Links",
 			url: "/links/",
 			icon: "material-symbols:link",
 			children: [
@@ -291,7 +288,7 @@ export const navBarConfig: NavBarConfig = {
 			],
 		},
 		{
-			name: "动态/相册",
+			name: "内容",
 			url: "/content/",
 			icon: "material-symbols:person",
 			children: [

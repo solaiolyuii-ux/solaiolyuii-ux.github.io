@@ -10,3 +10,7 @@
 
 
 页面构建使用了[Mizuki](https://github.com/matsuzaka-yuki/Mizuki)的主题，才能这么快制作完成！
+
+
+### 特别说明
+本博客内所使用的图片皆来自网络，不做商用，仅做分享，也禁止商用！

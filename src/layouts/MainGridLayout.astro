@@ -12,8 +12,6 @@ import IconifyLoader from "../components/misc/IconifyLoader.astro";
 import ImageWrapper from "../components/misc/ImageWrapper.astro";
 import TypewriterText from "../components/TypewriterText.astro";
 import TOC from "../components/widget/TOC.astro";
-import PasswordProtection from '../components/PasswordProtection.astro';
-// ... 其他导入保持不变
 import {
 	fullscreenWallpaperConfig,
 	siteConfig,
@@ -40,8 +38,6 @@ interface Props {
 	setOGTypeArticle?: boolean;
 	postSlug?: string;
 	headings?: MarkdownHeading[];
-	password?: string;          // 新增
-	encryptedContent?: string;  // 新增
 }
 
 // 类型守卫函数
@@ -822,20 +818,18 @@ const transparentClass = shouldEnableTransparency
 
 
             {/* 侧边栏和主内容区域容器 */}
-<div id="content-wrapper" class="onload-animation transition-leaving">
-    <!-- 密码保护逻辑 -->
-    {Astro.props.password ? (
-        <PasswordProtection encryptedContent={Astro.props.encryptedContent || ''} />
-    ) : (
-        <>
-            <!-- 普通文章内容 -->
-            <slot></slot>
-            <div class="footer col-span-full onload-animation hidden lg:block">
-                <Footer></Footer>
+            <div class="contents">
+                {(mobileShowSidebar || tabletShowSidebar || desktopShowSidebar) && (
+                    <SideBar class={`${sidebarClass} ${transparentClass}`} headings={headings}></SideBar>
+                )}
+                
+                {hasRightSidebarComponents && (
+                    <div class={`right-sidebar-container ${rightSidebarClass} ${transparentClass}`}>
+                        <RightSideBar headings={headings}></RightSideBar>
+                    </div>
+                )}
             </div>
-        </>
-    )}
-</div>
+
             <main id="swup-container" class={`${mainContentClass} transition-main`}>
                 <div id="content-wrapper" class="onload-animation transition-leaving">
                     <!-- the overflow-hidden here prevent long text break the layout-->

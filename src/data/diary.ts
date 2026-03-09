@@ -16,7 +16,7 @@ const diaryData: DiaryItem[] = [
 	{
 		id: 1,
 		content:
-			"麻了，真的麻了!",
+			"春にはそこでもたぶん、花びらが秒速5センチで地上に降っています。 / 到了春天，大概花瓣也会以秒速5厘米的速度飘落在地上。",
 		date: "2026-01-15T10:30:00Z",
 		images: ["/images/diary/sakura.jpg", "/images/diary/1.jpg"],
 	},

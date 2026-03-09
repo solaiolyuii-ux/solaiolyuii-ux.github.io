@@ -293,9 +293,9 @@ const jsonLd = {
             }
 
             {
-                entry.data.encrypted ? (
+                isEncrypted ? (
                     <Encryptor password={entry.data.password}>
-                        <Markdown class="mb-6 markdown-content onload-animation">
+                         <Markdown class="mb-6 markdown-content onload-animation">
                             <Content />
                         </Markdown>
                     </Encryptor>
